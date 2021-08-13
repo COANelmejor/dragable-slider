@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+i {
+  color: rgb(255, 255, 255);
+  font-size: 3em;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+i:hover {
+  color: rgb(167, 11, 245);
+}
+
+.slider {
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  width: 80%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.slider-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200%;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  gap: 5px;
+  pointer-events: none;
+}
+
+.slide-img {
+  height: 100%;
+  background-color: black;
+  text-align: center;
+  padding: 3rem;
+}
