@@ -5,10 +5,10 @@ let pressed = false;
 let startX;
 let X;
 
+// Habilitando que el slider se mueva con el ratón en un navegador de computadora
 slider.addEventListener('mousedown', function(e) {
   pressed = true;
   startX = e.offsetX - innerSlider.offsetLeft;
-  console.log({startX, offsetLeft:innerSlider.offsetLeft});
   slider.style.cursor = 'grabbing';
 });
 
@@ -27,6 +27,24 @@ slider.addEventListener('mousemove', function(e) {
   X = e.offsetX
   innerSlider.style.left = `${X-startX}px`;
   checkBoundary();
+});
+
+// Habilitadno que funcione el slider en el navegador de móviles
+slider.addEventListener('touchstart', function(e) {
+  pressed = true;
+  startX = e.touches[0].pageX - innerSlider.offsetLeft;
+});
+
+slider.addEventListener('touchmove', function(e) {
+  if (!pressed) return;
+  e.preventDefault();
+  X = e.touches[0].pageX
+  innerSlider.style.left = `${X-startX}px`;
+  checkBoundary();
+});
+
+slider.addEventListener('touchend', function(e) {
+  pressed = false;
 });
 
 function checkBoundary() {
