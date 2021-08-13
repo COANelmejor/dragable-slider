@@ -17,9 +17,9 @@ i:hover {
 
 .slider {
   position: absolute;
-  left: 10%;
+  left: 0;
   top: 30%;
-  width: 80%;
+  width: 100%;
   height: 200px;
   overflow: hidden;
 }
